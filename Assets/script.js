@@ -1,5 +1,4 @@
 
-const Promise = require('promise');
 var firebaseConfig = {
     apiKey: "AIzaSyBEcbgLF4-dHa-IjGI7_agf8tZMTuL8kSU",
     authDomain: "thome-d4776.firebaseapp.com",
@@ -11,77 +10,93 @@ var firebaseConfig = {
     measurementId: "G-6MTSGT94M3"
 };
 firebase.initializeApp(firebaseConfig);
+//firebase data
 let firebaseRef1 = firebase.database().ref("LIGHT1_STATUS");
 let firebaseRef2 = firebase.database().ref("LIGHT2_STATUS");
 let firebaseRef3 = firebase.database().ref("LIGHT3_STATUS");
 let firebaseRef4 = firebase.database().ref("LIGHT4_STATUS");
 
-
+//on buttons
 var light1on = document.getElementById('light1on');
 var light2on = document.getElementById('light2on');
 var light3on = document.getElementById('light3on');
 var light4on = document.getElementById('light4on');
 
+//off buttons
 var light1off = document.getElementById('light1off');
 var light2off = document.getElementById('light2off');
 var light3off = document.getElementById('light3off');
 var light4off = document.getElementById('light4off');
 
+
 firebaseRef1.on('value', function (snap) {
-    promise= new Promise((resolve, reject) => {
-        var data1 = snap.val();
-        console.log(data1 + "1");
-        resolve (data1);
-    });
+
+    data1 = snap.val();
+    console.log(data1 + "1");
+
+    if (data1 === "ON") {
+
+        console.log(data1 + "1 color changed")
+        light1on.style.backgroundColor = "#25D366";
+
+    } else if(data1==="OFF"){
+
+        light1on.style.backgroundColor = "";
+
+    }
 });
 
 firebaseRef2.on('value', function (snap) {
-    var data2 = snap.val();
+
+    data2 = snap.val();
     console.log(data2 + "2");
+
+    if (data2 === "ON") {
+
+        console.log(data2 + "2 color changed")
+        light2on.style.backgroundColor = "#25D366";
+
+    } else if(data2==="OFF"){
+
+        light2on.style.backgroundColor = "";
+
+    }
 });
 
 firebaseRef3.on('value', function (snap) {
-    var data3 = snap.val();
+
+    data3 = snap.val();
     console.log(data3 + "3");
+
+    if (data3 === "ON") {
+
+        console.log(data3 + "3 color changed")
+        light3on.style.backgroundColor = "#25D366";
+
+    } else if(data3==="OFF"){
+
+        light3on.style.backgroundColor = "";
+
+    }
 });
 
 firebaseRef4.on('value', function (snap) {
-    return new Promise((resolve, reject) => {
-        var data4 = snap.val();
-        console.log(data4 + "4");
-        resolve (data4);
-    });
 
+    data4 = snap.val();
+    console.log(data4 + "4");
+
+    if (data4 === "ON") {
+
+        console.log(data4 + "4 color changed")
+        light4on.style.backgroundColor = "#25D366";
+
+    } else if(data4==="OFF"){
+
+        light4on.style.backgroundColor = "";
+
+    }
 });
 
-function color(data) {
-    console.log(data + "hlw");    
-    /*if(data1 === "ON"){
-        console.log(data1 + "Heyy")
-        light1on.style.backgroundColor = "green";
-    } else {
-        light1on.style.backgroundColor = "";
-    }
-    if (data2 === "ON") {
-        light2on.style.backgroundColor = "green";
-    } else {
-        light2on.style.backgroundColor = "";
-    }
-    if (data3 === "ON") {
-        light3on.style.backgroundColor = "green";
-    } else {
-        light3on.style.backgroundColor = "";
-    }
-    if (data4 === "ON") {
-        light4on.style.backgroundColor = "green";
-    } else {
-        light4on.style.backgroundColor = "";
-    }
-    return light1on, light2on, light3on, light4on;*/
-}
-
-promise.then(
-    color(data1));
 //On Button Actions
 
 light1on.onclick = function () {
@@ -99,6 +114,7 @@ light3on.onclick = function () {
 light4on.onclick = function () {
     firebaseRef4.set("ON")
 };
+
 //Off button Actions
 light1off.onclick = function () {
     firebaseRef1.set("OFF");
