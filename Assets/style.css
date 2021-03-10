@@ -1,15 +1,13 @@
 .btnon{
   text-align: center;
-  padding: 2em;
+  height: 10rem;
   margin-top: 2em;
-  height: .07em;
 }
 
 .btnoff{
   text-align: center;
-  padding: 2em;
+  height: 10rem;
   margin-top: 2em;
-  height: .07em;
 }
 
 span{
