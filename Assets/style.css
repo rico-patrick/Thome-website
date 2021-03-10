@@ -1,15 +1,29 @@
 .btnon{
-    margin: 20px;
-    height: 7rem;
+  text-align: center;
+  padding: 2em;
+  margin-top: 2em;
+  height: .07em;
 }
+
 .btnoff{
-    margin: 20px;
-    height: 7rem;
+  text-align: center;
+  padding: 2em;
+  margin-top: 2em;
+  height: .07em;
+}
+
+span{
+  color: springgreen;
+}
+
+a{
+  color: #00ff7f;
 }
   /*--footer--*/
-footer {
+.footer {
     display: block;
+    margin-top: 3rem;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 2rem;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }

@@ -37,7 +37,7 @@ firebaseRef1.on('value', function (snap) {
     if (data1 === "ON") {
 
         console.log(data1 + "1 color changed")
-        light1on.style.backgroundColor = "#25D366";
+        light1on.style.backgroundColor = "#00ff7f";
 
     } else if(data1==="OFF"){
 
@@ -54,7 +54,7 @@ firebaseRef2.on('value', function (snap) {
     if (data2 === "ON") {
 
         console.log(data2 + "2 color changed")
-        light2on.style.backgroundColor = "#25D366";
+        light2on.style.backgroundColor = "#00ff7f";
 
     } else if(data2==="OFF"){
 
@@ -71,7 +71,7 @@ firebaseRef3.on('value', function (snap) {
     if (data3 === "ON") {
 
         console.log(data3 + "3 color changed")
-        light3on.style.backgroundColor = "#25D366";
+        light3on.style.backgroundColor = "#00ff7f";
 
     } else if(data3==="OFF"){
 
@@ -88,7 +88,7 @@ firebaseRef4.on('value', function (snap) {
     if (data4 === "ON") {
 
         console.log(data4 + "4 color changed")
-        light4on.style.backgroundColor = "#25D366";
+        light4on.style.backgroundColor = "#00ff7f";
 
     } else if(data4==="OFF"){
 
